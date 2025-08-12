@@ -1,0 +1,10 @@
+CREATE DATABASE waibao;
+
+USE waibao;
+
+CREATE TABLE users (
+                       id VARCHAR(36) PRIMARY KEY,          -- 用户ID, 存储UUID
+                       username VARCHAR(50) NOT NULL UNIQUE, -- 用户名, 建议添加唯一约束
+                       password VARCHAR(255) NOT NULL,       -- 密码, 存储哈希后的密码
+                       role VARCHAR(20) DEFAULT 'user'       -- 用户角色
+);
